@@ -11,6 +11,8 @@
 		D6A64520280BE6190062C86A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A6451F280BE6190062C86A /* ContentView.swift */; };
 		D6A64522280BE61B0062C86A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6A64521280BE61B0062C86A /* Assets.xcassets */; };
 		D6A64525280BE61B0062C86A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6A64524280BE61B0062C86A /* Preview Assets.xcassets */; };
+		D6A6452D280BE8440062C86A /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = D6A6452C280BE8440062C86A /* Inject */; };
+		D6A6452F280C59730062C86A /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A6452E280C59730062C86A /* ContentDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,7 @@
 		D6A6451F280BE6190062C86A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D6A64521280BE61B0062C86A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6A64524280BE61B0062C86A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D6A6452E280C59730062C86A /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6A6452D280BE8440062C86A /* Inject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +57,7 @@
 			children = (
 				D6A6451D280BE6190062C86A /* SwiftUI_InjectIIIApp.swift */,
 				D6A6451F280BE6190062C86A /* ContentView.swift */,
+				D6A6452E280C59730062C86A /* ContentDetailView.swift */,
 				D6A64521280BE61B0062C86A /* Assets.xcassets */,
 				D6A64523280BE61B0062C86A /* Preview Content */,
 			);
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = SwiftUI_InjectIII;
+			packageProductDependencies = (
+				D6A6452C280BE8440062C86A /* Inject */,
+			);
 			productName = SwiftUI_InjectIII;
 			productReference = D6A6451A280BE6190062C86A /* SwiftUI_InjectIII.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = D6A64511280BE6190062C86A;
+			packageReferences = (
+				D6A6452B280BE8440062C86A /* XCRemoteSwiftPackageReference "Inject" */,
+			);
 			productRefGroup = D6A6451B280BE6190062C86A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6A64520280BE6190062C86A /* ContentView.swift in Sources */,
+				D6A6452F280C59730062C86A /* ContentDetailView.swift in Sources */,
 				D6A6451E280BE6190062C86A /* SwiftUI_InjectIIIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +291,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.va.SwiftUI-InjectIII";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -307,6 +323,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.va.SwiftUI-InjectIII";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -337,6 +357,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D6A6452B280BE8440062C86A /* XCRemoteSwiftPackageReference "Inject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzysztofzablocki/Inject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D6A6452C280BE8440062C86A /* Inject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D6A6452B280BE8440062C86A /* XCRemoteSwiftPackageReference "Inject" */;
+			productName = Inject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D6A64512280BE6190062C86A /* Project object */;
 }
